@@ -54,13 +54,13 @@ function ShowEnforcerDerma()
         surface.DrawRect(0, 0, w, h)
     end
 
-    local CommunityName = vgui.Create( "DLabel", Enforcer )
-	CommunityName:SetText( "Welcome to "..EnforcerConfig.CommunityName )
-	CommunityName:SetFont("Enforcer100-Bold")
-	CommunityName:SetColor(Color(255,255,255))
-	CommunityName:SizeToContents()
-	local w,h = CommunityName:GetSize()
-	CommunityName:SetPos( ScrW()/2-(w/2), ScrH()*0.1 )
+    local Title = vgui.Create( "DLabel", Enforcer )
+	Title:SetText(EnforcerConfig.Title )
+	Title:SetFont("Enforcer100-Bold")
+	Title:SetColor(Color(255,255,255))
+	Title:SizeToContents()
+	local w,h = Title:GetSize()
+	Title:SetPos( ScrW()/2-(w/2), ScrH()*0.1 )
 
 	local WhiteLine = vgui.Create( "DPanel",Enforcer )
 	WhiteLine:SetPos( ScrW()/2-(ScrW()*((w/ScrW())+0.1)/2), ScrH()*0.2 ) -- Set the position of the panel
@@ -71,7 +71,7 @@ function ShowEnforcerDerma()
 	end
 
 	local DoneButton = vgui.Create( "DButton", Enforcer ) // Create the button and parent it to the frame
-	DoneButton:SetText( "Done" )					// Set the text on the button
+	DoneButton:SetText(EnforcerConfig.DoneButton)					// Set the text on the button
 	DoneButton:SetFont("Enforcer30")
 	DoneButton:SetTextColor( Color(255,255,255) )
 	DoneButton:SetPos( ScrW()/2-((ScrW()*0.2)/2), ScrH()*0.7 )					// Set the position on the frame
@@ -92,7 +92,7 @@ function ShowEnforcerDerma()
 		DoneBlock:SetPaintBackground( false )
 
 	local EnterNameLabel = vgui.Create( "DLabel", Enforcer )
-	EnterNameLabel:SetText( "Below you must enter a roleplay name for your character." )
+	EnterNameLabel:SetText( EnforcerConfig.EnterNameLabel )
 	EnterNameLabel:SetFont("Enforcer36")
 	EnterNameLabel:SetColor(Color(255,255,255))
 	EnterNameLabel:SizeToContents()
@@ -100,7 +100,7 @@ function ShowEnforcerDerma()
 	EnterNameLabel:SetPos( ScrW()/2-(w/2), ScrH()*0.225 )
 
 	local EnterFirstNameLabel = vgui.Create( "DLabel", Enforcer )
-	EnterFirstNameLabel:SetText( "First Name:" )
+	EnterFirstNameLabel:SetText( EnforcerConfig.EnterFirstNameLabel )
 	EnterFirstNameLabel:SetFont("Enforcer30")
 	EnterFirstNameLabel:SetColor(Color(255,255,255))
 	EnterFirstNameLabel:SizeToContents()
@@ -118,7 +118,7 @@ function ShowEnforcerDerma()
 		local FirstNameTextEntry = vgui.Create( "DTextEntry", BGTextEntry ) -- create the form as a child of frame
 		FirstNameTextEntry:SetPos(0, 0)
 		FirstNameTextEntry:SetSize(ScrW()*0.05,ScrH()*0.02)
-		FirstNameTextEntry:SetPlaceholderText( "First Name" )
+		FirstNameTextEntry:SetPlaceholderText( EnforcerConfig.FirstNameTextEntry )
 		FirstNameTextEntry:SetDrawBackground(false)
 		FirstNameTextEntry:SetTextColor(Color(33,33,33))
 		FirstNameTextEntry:SetFont("Enforcer20")
@@ -166,7 +166,7 @@ function ShowEnforcerDerma()
 			end
 
 	local EnterLastNameLabel = vgui.Create( "DLabel", Enforcer )
-	EnterLastNameLabel:SetText( "Last Name:" )
+	EnterLastNameLabel:SetText( EnforcerConfig.EnterLastNameLabel )
 	EnterLastNameLabel:SetFont("Enforcer30")
 	EnterLastNameLabel:SetColor(Color(255,255,255))
 	EnterLastNameLabel:SizeToContents()
@@ -184,7 +184,7 @@ function ShowEnforcerDerma()
 		local LastNameTextEntry = vgui.Create( "DTextEntry", BGTextEntry ) -- create the form as a child of frame
 		LastNameTextEntry:SetPos(0, 0)
 		LastNameTextEntry:SetSize(ScrW()*0.05,ScrH()*0.02)
-		LastNameTextEntry:SetPlaceholderText( "Last Name" )
+		LastNameTextEntry:SetPlaceholderText( EnforcerConfig.LastNameTextEntry )
 		LastNameTextEntry:SetDrawBackground(false)
 		LastNameTextEntry:SetTextColor(Color(33,33,33))
 		LastNameTextEntry:SetFont("Enforcer20")
